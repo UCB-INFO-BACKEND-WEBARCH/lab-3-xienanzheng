@@ -50,6 +50,20 @@ next_item_id = 1
 
 
 # ============================================================
+# Root Route
+# ============================================================
+
+@app.get("/")
+def index():
+    """Basic index to avoid 404 at root."""
+    return {
+        "message": "Advanced Validation API",
+        "docs": "/swagger-ui",
+        "routes": ["/items", "/stores"],
+    }
+
+
+# ============================================================
 # Helper Functions (use these in your TODOs)
 # ============================================================
 
